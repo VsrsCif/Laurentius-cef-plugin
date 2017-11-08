@@ -1,4 +1,4 @@
-package si.jrc.msh.plugin.zpp.web;
+package si.jrc.msh.plugin.cef.web;
 
 
 /*

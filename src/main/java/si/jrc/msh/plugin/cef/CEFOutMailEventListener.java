@@ -28,7 +28,6 @@ import si.laurentius.commons.utils.Utils;
 import si.laurentius.msh.outbox.property.MSHOutProperties;
 import si.laurentius.msh.outbox.property.MSHOutProperty;
 import si.laurentius.plugin.eventlistener.OutMailEventListenerDef;
-import si.laurentius.plugin.interceptor.MailInterceptorDef;
 
 import si.laurentius.plugin.interfaces.OutMailEventInterface;
 import si.laurentius.plugin.interfaces.OutMailEventInterface.PluginOutEvent;

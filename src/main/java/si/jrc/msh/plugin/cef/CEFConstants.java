@@ -27,6 +27,12 @@ public class CEFConstants {
   public static final String S_SIGNAL_TYPE_ID = "SignalType";
   
   
+  public static final String S_SERVICE_ONEWAY_SIGNONLY =  "SRV_ONEWAY_SIGNONLY";
+  public static final String S_SERVICE_ONEWAY_RETRY =  "SRV_ONEWAY_RETRY";
+  public static final String S_SERVICE_SIMPLE_ONEWAY =  "SRV_SIMPLE_ONEWAY";
+  public static final String S_SERVICE_SIMPLE_TWOWAY =  "SRV_SIMPLE_TWOWAY";
+  
+  
   
   
   public static final String S_SERVICE_CONF_TEST =  "http://www.esens.eu/as4/conformancetest";
@@ -35,8 +41,12 @@ public class CEFConstants {
   public static final String S_ACTION_CONF_TEST_DELIVER = "Deliver";
   public static final String S_ACTION_CONF_TEST_NOTIFY = "Notify";
   
-  public static final String S_MINDER_ADDRESS = "minder@cef-minder.eu";
+  public static final String S_MINDER_ADDRESS = "minder@cef-digital.eu";
   public static final String S_MINDER_NAME = "Minder";
+  
+  
+  public static final String S_MINDER_NOTIFICTION_ERROR = "Error";
+  public static final String S_MINDER_NOTIFICTION_RECIEPT = "Receipt";
   
   
   

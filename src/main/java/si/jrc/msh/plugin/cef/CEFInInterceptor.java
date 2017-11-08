@@ -14,7 +14,7 @@
  */
 package si.jrc.msh.plugin.cef;
 
-import java.math.BigInteger;
+import java.util.Objects;
 import java.util.Properties;
 import javax.annotation.Resource;
 import javax.ejb.EJB;
@@ -31,6 +31,7 @@ import si.laurentius.ebox.SEDBox;
 import si.laurentius.commons.SEDJNDI;
 import si.laurentius.commons.SEDSystemProperties;
 import si.laurentius.commons.cxf.SoapUtils;
+import si.laurentius.commons.enums.SEDMailPartSource;
 import si.laurentius.commons.exception.PModeException;
 import si.laurentius.commons.exception.StorageException;
 import si.laurentius.commons.interfaces.JMSManagerInterface;
@@ -99,7 +100,6 @@ public class CEFInInterceptor implements SoapInterceptorInterface {
 
     SEDBox inboxSb = SoapUtils.getMSHInMailReceiverBox(msg);
 
-    MSHOutMail mOutMail = SoapUtils.getMSHOutMail(msg);
     MSHInMail mInMail = SoapUtils.getMSHInMail(msg);
     if (mInMail != null) {
       if (CEFConstants.S_SERVICE_CONF_TEST.equals(mInMail.getService())) {
@@ -190,18 +190,20 @@ public class CEFInInterceptor implements SoapInterceptorInterface {
 
     mout.setMSHOutPayload(new MSHOutPayload());
     for (MSHInPart mip : mInMail.getMSHInPayload().getMSHInParts()) {
-      MSHOutPart mop = new MSHOutPart();
-      mop.setType(mip.getType());
-      mop.setEbmsId(mip.getEbmsId());
-      mop.setDescription(mip.getDescription());
-      mop.setEncoding(mip.getEncoding());
-      mop.setFilename(mip.getFilename());
-      mop.setFilepath(mip.getFilepath());
-      mop.setMimeType(mip.getMimeType());
-      mop.setName(mip.getName());
-      mop.setSha256Value(mip.getSha256Value());
-      mop.setSize(mip.getSize());
-      mout.getMSHOutPayload().getMSHOutParts().add(mop);
+      if (Objects.equals(mip.getSource(), SEDMailPartSource.MAIL.getValue())) {
+        MSHOutPart mop = new MSHOutPart();
+        mop.setType(mip.getType());
+        mop.setEbmsId(mip.getEbmsId());
+        mop.setDescription(mip.getDescription());
+        mop.setEncoding(mip.getEncoding());
+        mop.setFilename(mip.getFilename());
+        mop.setFilepath(mip.getFilepath());
+        mop.setMimeType(mip.getMimeType());
+        mop.setName(mip.getName());
+        mop.setSha256Value(mip.getSha256Value());
+        mop.setSize(mip.getSize());
+        mout.getMSHOutPayload().getMSHOutParts().add(mop);
+      }
     }
 
     try {
@@ -301,19 +303,20 @@ public class CEFInInterceptor implements SoapInterceptorInterface {
     mout.setMSHOutPayload(new MSHOutPayload());
 
     for (MSHInPart mip : mInMail.getMSHInPayload().getMSHInParts()) {
-      MSHOutPart mop = new MSHOutPart();
-      mop.setEbmsId(mip.getEbmsId());
-      mop.setType(mip.getType());
-      mop.setDescription(mip.getDescription());
-      mop.setEncoding(mip.getEncoding());
-      mop.setFilename(mip.getFilename());
-      mop.setFilepath(mip.getFilepath());
-      mop.setMimeType(mip.getMimeType());
-      mop.setName(mip.getName());
-      mop.setSha256Value(mip.getSha256Value());
-      mop.setSize(mip.getSize());
-
-      mout.getMSHOutPayload().getMSHOutParts().add(mop);
+      if (Objects.equals(mip.getSource(), SEDMailPartSource.MAIL.getValue())) {
+        MSHOutPart mop = new MSHOutPart();
+        mop.setEbmsId(mip.getEbmsId());
+        mop.setType(mip.getType());
+        mop.setDescription(mip.getDescription());
+        mop.setEncoding(mip.getEncoding());
+        mop.setFilename(mip.getFilename());
+        mop.setFilepath(mip.getFilepath());
+        mop.setMimeType(mip.getMimeType());
+        mop.setName(mip.getName());
+        mop.setSha256Value(mip.getSha256Value());
+        mop.setSize(mip.getSize());
+        mout.getMSHOutPayload().getMSHOutParts().add(mop);
+      }
 
     }
 

@@ -37,10 +37,6 @@ public class CEFPluginDescription extends  AbstractPluginDescription {
       DefaultInitData did = (DefaultInitData) XMLUtils.deserialize(CEFPluginDescription.class.
               getResourceAsStream("/init/def-init-data.xml"),
               DefaultInitData.class);
-      
-      did.getPModeData().getServices().clear();
-     
-      
       return did;
     } catch (JAXBException ex) {
       LOG.logError("Error parsing default init data!", ex);
@@ -54,7 +50,7 @@ public class CEFPluginDescription extends  AbstractPluginDescription {
       registerPluginComponentInterface(CEFInInterceptor.class);
       registerPluginComponentInterface(CEFInFaultInterceptor.class);    
       registerPluginComponentInterface(CEFOutFaultInterceptor.class);
-      registerPluginComponentInterface(CEFOutMailEventListener.class);
+      registerPluginComponentInterface(CEFTaskOutMailStatus.class);
       
       // register plugin
       registerPlugin();

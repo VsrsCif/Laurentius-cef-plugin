@@ -12,7 +12,7 @@
  * or implied. See the Licence for the specific language governing permissions and limitations under
  * the Licence.
  */
-package si.jrc.msh.plugin.zpp.web;
+package si.jrc.msh.plugin.cef.web;
 
 import java.io.File;
 import java.io.FileInputStream;

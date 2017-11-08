@@ -47,8 +47,7 @@ public class CEFPluginDescription extends  AbstractPluginDescription {
   private void postConstruct() {    
     try {
       // and log further application specific info
-      registerPluginComponentInterface(CEFInInterceptor.class);
-      registerPluginComponentInterface(CEFInFaultInterceptor.class);    
+      registerPluginComponentInterface(CEFInInterceptor.class);      
       registerPluginComponentInterface(CEFOutFaultInterceptor.class);
       registerPluginComponentInterface(CEFTaskOutMailStatus.class);
       

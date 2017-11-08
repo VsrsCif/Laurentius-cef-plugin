@@ -286,8 +286,7 @@ public class CEFInInterceptor implements SoapInterceptorInterface {
             CEFConstants.S_CONV_ID, mInMail.getConversationId()));
     mout.getMSHOutProperties().getMSHOutProperties().add(createMSHOutProperty(
             CEFConstants.S_FROM_PARTY_ID_PROP, mInMail.getSenderEBox().
-                    substring(0,
-                            mInMail.getSenderEBox().indexOf("@"))));
+                    substring(0,mInMail.getSenderEBox().indexOf("@"))));
     mout.getMSHOutProperties().getMSHOutProperties().add(createMSHOutProperty(
             CEFConstants.S_TO_PARTY_ID_PROP, mInMail.getReceiverEBox().
                     substring(0,

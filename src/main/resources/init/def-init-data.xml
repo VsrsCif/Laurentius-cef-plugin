@@ -21,8 +21,8 @@
                     <pmd:Property name="finalRecipient" required="true"/>
                 </pmd:Properties>
                 <pmd:PayloadProfiles maxSize="10000">
-                    <pmd:PayloadProfile name="xmlpayload" maxSize="10000" maxOccurs="1"/>
-                    <pmd:PayloadProfile name="custompayload" maxSize="10000" maxOccurs="1"/>
+                    <pmd:PayloadProfile name="xmlpayload" maxSize="10000" MIME="application/xml" maxOccurs="1" minOccurs="1"/>
+                    <pmd:PayloadProfile name="custompayload" maxSize="10000" MIME="application/octet-stream" maxOccurs="1" minOccurs="0"/>
                 </pmd:PayloadProfiles>
             </pmd:Action>
             <pmd:Action name="Deliver" invokeRole="executor" messageType="userMessage">
@@ -39,10 +39,10 @@
                     <pmd:Property name="finalRecipient" required="true"/>
                 </pmd:Properties>
                 <pmd:PayloadProfiles maxSize="10000">
-                    <pmd:PayloadProfile name="xmlpayload" maxSize="10000" maxOccurs="1"/>
-                    <pmd:PayloadProfile name="custompayload" maxSize="10000" maxOccurs="1"/>
+                    <pmd:PayloadProfile name="xmlpayload" maxSize="10000" MIME="application/xml" maxOccurs="1" minOccurs="1"/>
+                    <pmd:PayloadProfile name="custompayload" maxSize="10000" MIME="application/octet-stream" maxOccurs="1" minOccurs="0"/>
                 </pmd:PayloadProfiles>
-            </pmd:Action>
+            </pmd:Action>	
             <pmd:Action name="Notify" invokeRole="executor" messageType="userMessage">
                 <pmd:Properties>
                     <pmd:Property name="MessageId" required="true"/>
@@ -57,8 +57,8 @@
                     <pmd:Property name="finalRecipient" required="true"/>
                 </pmd:Properties>
                 <pmd:PayloadProfiles maxSize="10000">
-                    <pmd:PayloadProfile name="xmlpayload" maxSize="10000" maxOccurs="1"/>
-                    <pmd:PayloadProfile name="custompayload" maxSize="10000" maxOccurs="1"/>
+                    <pmd:PayloadProfile name="xmlpayload" maxSize="10000" MIME="application/xml" maxOccurs="1" minOccurs="1"/>
+                    <pmd:PayloadProfile name="custompayload" maxSize="10000" MIME="application/octet-stream" maxOccurs="1" minOccurs="0"/>
                 </pmd:PayloadProfiles>
             </pmd:Action>
         </pmd:Service>
@@ -71,8 +71,8 @@
                     <pmd:Property name="finalRecipient" required="true"/>
                 </pmd:Properties>
                 <pmd:PayloadProfiles maxSize="10000">
-                    <pmd:PayloadProfile name="xmlpayload" maxSize="10000" maxOccurs="1"/>
-                    <pmd:PayloadProfile name="custompayload" maxSize="10000" maxOccurs="1"/>
+                    <pmd:PayloadProfile name="xmlpayload" maxSize="10000" MIME="application/xml" maxOccurs="1" minOccurs="1"/>
+                    <pmd:PayloadProfile name="custompayload" maxSize="10000" MIME="application/octet-stream" maxOccurs="1" minOccurs="0"/>
                 </pmd:PayloadProfiles>
             </pmd:Action>
         </pmd:Service>
@@ -85,10 +85,22 @@
                     <pmd:Property name="finalRecipient" required="true"/>
                 </pmd:Properties>
                 <pmd:PayloadProfiles maxSize="10000">
-                    <pmd:PayloadProfile name="xmlpayload" maxSize="10000" maxOccurs="1"/>
-                    <pmd:PayloadProfile name="custompayload" maxSize="10000" maxOccurs="1"/>
+                    <pmd:PayloadProfile name="xmlpayload" maxSize="10000" MIME="application/xml" maxOccurs="1" minOccurs="1"/>
+                    <pmd:PayloadProfile name="custompayload" maxSize="10000" MIME="application/octet-stream" maxOccurs="1" minOccurs="0"/>
                 </pmd:PayloadProfiles>
             </pmd:Action>
+            <pmd:Action name="ACT_SIMPLE_TWOWAY" invokeRole="executor" messageType="userMessage">
+                <pmd:Properties>
+                    <pmd:Property name="originalSender" required="true"/>
+                    <pmd:Property name="finalRecipient" required="true"/>
+                </pmd:Properties>
+                <pmd:PayloadProfiles maxSize="10000">
+                    <pmd:PayloadProfile name="xmlpayload" MIME="application/xml" maxSize="10000" maxOccurs="1" minOccurs="1"/>
+                    <pmd:PayloadProfile name="custompayload" MIME="application/octet-stream" maxSize="10000" maxOccurs="1" minOccurs="0"/>
+                </pmd:PayloadProfiles>
+            </pmd:Action>
+            
+            
         </pmd:Service>
         <pmd:Service id="SRV_SIMPLE_ONEWAY" serviceName="SRV_SIMPLE_ONEWAY" serviceType="" useSEDProperties="false">
             <pmd:Initiator role="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator"/>
@@ -99,8 +111,8 @@
                     <pmd:Property name="finalRecipient" required="true"/>
                 </pmd:Properties>
                 <pmd:PayloadProfiles maxSize="10000">
-                    <pmd:PayloadProfile name="xmlpayload" maxSize="10000" maxOccurs="1"/>
-                    <pmd:PayloadProfile name="custompayload" maxSize="10000" maxOccurs="1"/>
+                    <pmd:PayloadProfile name="xmlpayload" maxSize="10000" MIME="application/xml" maxOccurs="1" minOccurs="1"/>
+                    <pmd:PayloadProfile name="custompayload" maxSize="10000" MIME="application/octet-stream" maxOccurs="1" minOccurs="0"/>
                 </pmd:PayloadProfiles>
             </pmd:Action>
         </pmd:Service>
@@ -113,8 +125,8 @@
                     <pmd:Property name="finalRecipient" required="true"/>
                 </pmd:Properties>
                 <pmd:PayloadProfiles maxSize="10000">
-                    <pmd:PayloadProfile name="xmlpayload" maxSize="10000" maxOccurs="1"/>
-                    <pmd:PayloadProfile name="custompayload" maxSize="10000" maxOccurs="1"/>
+                    <pmd:PayloadProfile name="xmlpayload" maxSize="10000" MIME="application/xml" maxOccurs="1" minOccurs="1"/>
+                    <pmd:PayloadProfile name="custompayload" maxSize="10000" MIME="application/octet-stream" maxOccurs="1" minOccurs="0"/>
                 </pmd:PayloadProfiles>
             </pmd:Action>
         </pmd:Service>
@@ -127,88 +139,56 @@
                     <pmd:Property name="finalRecipient" required="true"/>
                 </pmd:Properties>
                 <pmd:PayloadProfiles maxSize="10000">
-                    <pmd:PayloadProfile name="xmlpayload" maxSize="10000" maxOccurs="1"/>
-                    <pmd:PayloadProfile name="custompayload" maxSize="10000" maxOccurs="1"/>
+                    <pmd:PayloadProfile name="xmlpayload" maxSize="10000" MIME="application/xml" maxOccurs="1" minOccurs="1"/>
+                    <pmd:PayloadProfile name="custompayload" maxSize="10000" MIME="application/octet-stream" maxOccurs="1" minOccurs="0"/>
                 </pmd:PayloadProfiles>
             </pmd:Action>
         </pmd:Service>
-        <pmd:Service id="DeliveryWithReceipt" serviceName="DeliveryWithReceipt" useSEDProperties="true">
-            <pmd:Initiator role="Sender"/>
-            <pmd:Executor role="Receiver"/>
-            <pmd:Action name="Delivery" invokeRole="initiator">
-                <pmd:Properties>
-                    <pmd:Property name="originalSender" required="true"/>
-                    <pmd:Property name="finalRecipient" required="true"/>
-                </pmd:Properties>
-                <pmd:PayloadProfiles maxSize="10000">
-                    <pmd:PayloadProfile name="test" maxSize="10000" maxOccurs="1"/>
-                </pmd:PayloadProfiles>
-            </pmd:Action>
-        </pmd:Service>
-        <pmd:Service id="LegalDelivery_ZPP" serviceName="LegalDelivery_ZPP" serviceType="SVEV">
-            <pmd:Initiator role="Sender"/>
-            <pmd:Executor role="Receiver"/>
-            <pmd:Action name="DeliveryNotification" invokeRole="initiator">
-                <pmd:PayloadProfiles maxSize="10000">
-                    <pmd:PayloadProfile name="DeliveryNotification" MIME="application/pdf" maxOccurs="1" minOccurs="1"/>
-                    <pmd:PayloadProfile name="EncryptedPayload" maxSize="10000" maxOccurs="999" minOccurs="1"/>
-                </pmd:PayloadProfiles>
-            </pmd:Action>
-            <pmd:Action name="AdviceOfDelivery" invokeRole="executor">
-                <pmd:PayloadProfiles maxSize="10000">
-                    <pmd:PayloadProfile name="AdviceOfDelivery" MIME="application/pdf" maxOccurs="1" minOccurs="1"/>
-                </pmd:PayloadProfiles>
-            </pmd:Action>
-            <pmd:Action name="EncryptedKey" after="DeliveryNotification, AdviceOfDelivery" invokeRole="initiator">
-                <pmd:PayloadProfiles maxSize="10000">
-                    <pmd:PayloadProfile name="EncryptedKey" MIME="application/xml" maxOccurs="1" minOccurs="1"/>
-                </pmd:PayloadProfiles>
-            </pmd:Action>
-            <pmd:Action name="FictionNotification" after="DeliveryNotification" invokeRole="initiator">
-                <pmd:PayloadProfiles maxSize="10000">
-                    <pmd:PayloadProfile name="FictionNotification" MIME="application/pdf" maxOccurs="1"/>
-                    <pmd:PayloadProfile name="EncryptedKey" MIME="application/xml" maxOccurs="1" minOccurs="1"/>
-                </pmd:PayloadProfiles>
-            </pmd:Action>
-        </pmd:Service>
+
+        
         
         <pmd:PartyIdentitySet id="this-instance" isLocalIdentity="true">
             <pmd:PartyId type="urn:oasis:names:tc:ebcore:partyid-type:unregistered" valueSource="identifier">
-                <pmd:Identifier>laurentius-c3 </pmd:Identifier>
+                <pmd:Identifier>laurentius-c3</pmd:Identifier>
             </pmd:PartyId>
             <pmd:TransportProtocol id="default" isTwoWayProtocol="true" gzipCompress="true">
-                <pmd:Address connectionTimeout="120000" receiveTimeout="180000" chunked="false">http://localhost:8581/laurentius/msh </pmd:Address>
-                <pmd:SOAPVersion>1.2 </pmd:SOAPVersion>
+                <pmd:Address connectionTimeout="120000" receiveTimeout="180000" chunked="false">http://localhost:8581/laurentius/msh</pmd:Address>
+                <pmd:SOAPVersion>1.2</pmd:SOAPVersion>
             </pmd:TransportProtocol>
             <pmd:LocalPartySecurity signatureKeyAlias="test-laurentius" decryptionKeyAlias="test-laurentius"/>
             <pmd:ExchangePartySecurity signatureCertAlias="test-laurentius" encryptionCertAlias="test-laurentius"/>
         </pmd:PartyIdentitySet>
         <pmd:PartyIdentitySet id="minder" domain="cef-digital.eu" isLocalIdentity="false" active="true">
             <pmd:PartyId type="urn:oasis:names:tc:ebcore:partyid-type:unregistered" valueSource="identifier">
-                <pmd:Identifier>minder </pmd:Identifier>
+                <pmd:Identifier>minder</pmd:Identifier>
             </pmd:PartyId>
-            <pmd:TransportProtocol id="default" isTwoWayProtocol="true" gzipCompress="false">
-                <pmd:Address connectionTimeout="120000" receiveTimeout="180000" chunked="false">http://13.81.109.44:15001/corner4 </pmd:Address>
+            <pmd:TransportProtocol id="corner1" isTwoWayProtocol="true" gzipCompress="false">
+                <pmd:Address connectionTimeout="120000" receiveTimeout="180000" chunked="false">http://13.81.109.44:15001/corner1</pmd:Address>
                 <pmd:TLS disableCNAndHostnameCheck="false"/>
-                <pmd:SOAPVersion>1.2 </pmd:SOAPVersion>
+                <pmd:SOAPVersion>1.2</pmd:SOAPVersion>
+            </pmd:TransportProtocol>
+            <pmd:TransportProtocol id="corner4" isTwoWayProtocol="true" gzipCompress="false">
+                <pmd:Address connectionTimeout="120000" receiveTimeout="180000" chunked="false">http://13.81.109.44:15001/corner4</pmd:Address>
+                <pmd:TLS disableCNAndHostnameCheck="false"/>
+                <pmd:SOAPVersion>1.2</pmd:SOAPVersion>
             </pmd:TransportProtocol>
             <pmd:LocalPartySecurity/>
             <pmd:ExchangePartySecurity/>
         </pmd:PartyIdentitySet>
         <pmd:PartyIdentitySet id="other-instance" domain="other-instance.eu" isLocalIdentity="false" active="true">
             <pmd:PartyId type="urn:oasis:names:tc:ebcore:partyid-type:unregistered" valueSource="identifier">
-                <pmd:Identifier>laurentius-c2 </pmd:Identifier>
+                <pmd:Identifier>laurentius-c2</pmd:Identifier>
             </pmd:PartyId>
-            <pmd:PartyId type="type" valueSource="address"/>
+            
             <pmd:TransportProtocol id="default" isTwoWayProtocol="true" gzipCompress="true" base64Encoded="false">
-                <pmd:Address connectionTimeout="120000" receiveTimeout="180000" chunked="false">http://13.81.109.44:15001/as4Interceptor </pmd:Address>
+                <pmd:Address connectionTimeout="120000" receiveTimeout="180000" chunked="false">http://13.81.109.44:15001/as4Interceptor</pmd:Address>
                 <pmd:TLS disableCNAndHostnameCheck="false"/>
-                <pmd:SOAPVersion>1.2 </pmd:SOAPVersion>
+                <pmd:SOAPVersion>1.2</pmd:SOAPVersion>
             </pmd:TransportProtocol>
             <pmd:LocalPartySecurity/>
             <pmd:ExchangePartySecurity signatureCertAlias="test-laurentius" encryptionCertAlias="test-laurentius"/>
         </pmd:PartyIdentitySet>
-        <pmd:Security id="sign_sha256" WSSVersion="1.1">
+        <pmd:Security id="cef-sign" WSSVersion="1.1">
             <pmd:X509>
                 <pmd:Signature hashFunction="http://www.w3.org/2001/04/xmlenc#sha256" algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" keyIdentifierType="IssuerSerial">
                     <pmd:Reference allAttachments="true">
@@ -222,7 +202,7 @@
                 </pmd:Signature>
             </pmd:X509>
         </pmd:Security>
-        <pmd:Security id="enc_att_and_sign_v1" WSSVersion="1.1">
+        <pmd:Security id="cef-enc_and_sign" WSSVersion="1.1">
             <pmd:X509>
                 <pmd:Signature hashFunction="http://www.w3.org/2001/04/xmlenc#sha256" algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" keyIdentifierType="IssuerSerial">
                     <pmd:Reference allAttachments="true">
@@ -241,22 +221,28 @@
                 </pmd:Encryption>
             </pmd:X509>
         </pmd:Security>
+         
+        <pmd:ReceptionAwareness id="cef-reception_awareness" replyPattern="response" receiptType="AS4Receipt">
+            <pmd:Retry maxRetries="4" multiplyPeriod="2" period="1"/>
+            <pmd:DuplicateDetection windowPeriode="P1Y" eliminate="true"/>
+        </pmd:ReceptionAwareness>
+    
         <pmd:PMode id="cef-minder">
-            <pmd:ServiceIdRef>cef-conformancetest </pmd:ServiceIdRef>
+            <pmd:ServiceIdRef>cef-conformancetest</pmd:ServiceIdRef>
             <pmd:LocalPartyInfo partyIdentitySetIdRef="this-instance">
-                <pmd:Role>http://www.esens.eu/as4/conformancetest/sut </pmd:Role>
+                <pmd:Role>http://www.esens.eu/as4/conformancetest/sut</pmd:Role>
             </pmd:LocalPartyInfo>
             <pmd:ExchangeParties>
-                <pmd:PartyInfo partyIdentitySetIdRef="minder" partyDefTransportIdRef="default">
-                    <pmd:Role>http://www.esens.eu/as4/conformancetest/testdriver </pmd:Role>
+                <pmd:PartyInfo partyIdentitySetIdRef="minder" partyDefTransportIdRef="corner1">
+                    <pmd:Role>http://www.esens.eu/as4/conformancetest/testdriver</pmd:Role>
                 </pmd:PartyInfo>
             </pmd:ExchangeParties>
             <pmd:MEP>
-                <pmd:MEPType>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/oneWay </pmd:MEPType>
-                <pmd:MEPChannelBinding>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/push </pmd:MEPChannelBinding>
-                <pmd:MEPInitiatorRole>http://www.esens.eu/as4/conformancetest/testdriver </pmd:MEPInitiatorRole>
+                <pmd:MEPType>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/oneWay</pmd:MEPType>
+                <pmd:MEPChannelBinding>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/push</pmd:MEPChannelBinding>
+                <pmd:MEPInitiatorRole>http://www.esens.eu/as4/conformancetest/testdriver</pmd:MEPInitiatorRole>
                 <pmd:Leg>
-                    <pmd:MPC>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/defaultMPC </pmd:MPC>
+                    <pmd:MPC>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/defaultMPC</pmd:MPC>
                     <pmd:Transport>
                         <pmd:ForeChannel action="Deliver"/>
                         <pmd:BackChannel/>
@@ -264,25 +250,25 @@
                 </pmd:Leg>
             </pmd:MEP>
             <pmd:MEP>
-                <pmd:MEPType>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/oneWay </pmd:MEPType>
-                <pmd:MEPChannelBinding>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/push </pmd:MEPChannelBinding>
-                <pmd:MEPInitiatorRole>http://www.esens.eu/as4/conformancetest/testdriver </pmd:MEPInitiatorRole>
+                <pmd:MEPType>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/oneWay</pmd:MEPType>
+                <pmd:MEPChannelBinding>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/push</pmd:MEPChannelBinding>
+                <pmd:MEPInitiatorRole>http://www.esens.eu/as4/conformancetest/testdriver</pmd:MEPInitiatorRole>
                 <pmd:Leg>
-                    <pmd:MPC>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/defaultMPC </pmd:MPC>
+                    <pmd:MPC>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/defaultMPC</pmd:MPC>
                     <pmd:Transport>
                         <pmd:ForeChannel action="Submit">
-                            <pmd:ReceptionAwareness raPatternIdRef="AS4ReceiptResponse"/>
+                            <pmd:ReceptionAwareness raPatternIdRef="cef-reception_awareness"/>
                         </pmd:ForeChannel>
                         <pmd:BackChannel/>
                     </pmd:Transport>
                 </pmd:Leg>
             </pmd:MEP>
             <pmd:MEP>
-                <pmd:MEPType>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/oneWay </pmd:MEPType>
-                <pmd:MEPChannelBinding>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/push </pmd:MEPChannelBinding>
-                <pmd:MEPInitiatorRole>http://www.esens.eu/as4/conformancetest/sut </pmd:MEPInitiatorRole>
+                <pmd:MEPType>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/oneWay</pmd:MEPType>
+                <pmd:MEPChannelBinding>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/push</pmd:MEPChannelBinding>
+                <pmd:MEPInitiatorRole>http://www.esens.eu/as4/conformancetest/sut</pmd:MEPInitiatorRole>
                 <pmd:Leg>
-                    <pmd:MPC>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/defaultMPC </pmd:MPC>
+                    <pmd:MPC>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/defaultMPC</pmd:MPC>
                     <pmd:Transport>
                         <pmd:ForeChannel action="Notify"/>
                         <pmd:BackChannel/>
@@ -291,147 +277,161 @@
             </pmd:MEP>
         </pmd:PMode>
         <pmd:PMode id="c3-SRV_ONEWAY_SIGNONLY">
-            <pmd:ServiceIdRef>SRV_ONEWAY_SIGNONLY </pmd:ServiceIdRef>
+            <pmd:ServiceIdRef>SRV_ONEWAY_SIGNONLY</pmd:ServiceIdRef>
             <pmd:LocalPartyInfo partyIdentitySetIdRef="this-instance">
-                <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator </pmd:Role>
-                <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder </pmd:Role>
+                <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator</pmd:Role>
+                <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder</pmd:Role>
             </pmd:LocalPartyInfo>
             <pmd:ExchangeParties>
                 <pmd:PartyInfo partyIdentitySetIdRef="other-instance" partyDefTransportIdRef="default">
-                    <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator </pmd:Role>
-                    <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder </pmd:Role>
+                    <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator</pmd:Role>
+                    <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder</pmd:Role>
                 </pmd:PartyInfo>
             </pmd:ExchangeParties>
             <pmd:MEP>
-                <pmd:MEPType>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/oneWay </pmd:MEPType>
-                <pmd:MEPChannelBinding>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/push </pmd:MEPChannelBinding>
-                <pmd:MEPInitiatorRole>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator </pmd:MEPInitiatorRole>
+                <pmd:MEPType>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/oneWay</pmd:MEPType>
+                <pmd:MEPChannelBinding>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/push</pmd:MEPChannelBinding>
+                <pmd:MEPInitiatorRole>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator</pmd:MEPInitiatorRole>
                 <pmd:Leg>
-                    <pmd:MPC>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/defaultMPC </pmd:MPC>
+                    <pmd:MPC>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/defaultMPC</pmd:MPC>
                     <pmd:Transport>
-                        <pmd:ForeChannel action="ACT_ONEWAY_SIGNONLY" securityIdRef="sign_sha256">
-                            <pmd:ReceptionAwareness raPatternIdRef="AS4ReceiptResponse"/>
+                        <pmd:ForeChannel action="ACT_ONEWAY_SIGNONLY" securityIdRef="cef-sign">
+                            <pmd:ReceptionAwareness raPatternIdRef="cef-reception_awareness"/>
                         </pmd:ForeChannel>
-                        <pmd:BackChannel securityIdRef="sign_sha256"/>
+                        <pmd:BackChannel securityIdRef="cef-sign"/>
                     </pmd:Transport>
                 </pmd:Leg>
             </pmd:MEP>
         </pmd:PMode>
         <pmd:PMode id="c3-SRV_SIMPLE_ONEWAY">
-            <pmd:ServiceIdRef>SRV_SIMPLE_ONEWAY </pmd:ServiceIdRef>
+            <pmd:ServiceIdRef>SRV_SIMPLE_ONEWAY</pmd:ServiceIdRef>
             <pmd:LocalPartyInfo partyIdentitySetIdRef="this-instance" partyDefTransportIdRef="default">
-                <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator </pmd:Role>
-                <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder </pmd:Role>
+                <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator</pmd:Role>
+                <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder</pmd:Role>
             </pmd:LocalPartyInfo>
             <pmd:ExchangeParties>
                 <pmd:PartyInfo partyIdentitySetIdRef="other-instance" partyDefTransportIdRef="default">
-                    <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator </pmd:Role>
-                    <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder </pmd:Role>
+                    <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator</pmd:Role>
+                    <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder</pmd:Role>
                 </pmd:PartyInfo>
             </pmd:ExchangeParties>
             <pmd:MEP>
-                <pmd:MEPType>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/oneWay </pmd:MEPType>
-                <pmd:MEPChannelBinding>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/push </pmd:MEPChannelBinding>
-                <pmd:MEPInitiatorRole>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator </pmd:MEPInitiatorRole>
+                <pmd:MEPType>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/oneWay</pmd:MEPType>
+                <pmd:MEPChannelBinding>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/push</pmd:MEPChannelBinding>
+                <pmd:MEPInitiatorRole>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator</pmd:MEPInitiatorRole>
                 <pmd:Leg>
-                    <pmd:MPC>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/defaultMPC </pmd:MPC>
+                    <pmd:MPC>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/defaultMPC</pmd:MPC>
                     <pmd:Transport>
-                        <pmd:ForeChannel action="ACT_SIMPLE_ONEWAY" securityIdRef="enc_att_and_sign_v1">
-                            <pmd:ReceptionAwareness raPatternIdRef="AS4ReceiptResponse"/>
+                        <pmd:ForeChannel action="ACT_SIMPLE_ONEWAY" securityIdRef="cef-enc_and_sign">
+                            <pmd:ReceptionAwareness raPatternIdRef="cef-reception_awareness"/>
                         </pmd:ForeChannel>
-                        <pmd:BackChannel securityIdRef="sign_sha256"/>
+                        <pmd:BackChannel securityIdRef="cef-sign"/>
                     </pmd:Transport>
                 </pmd:Leg>
             </pmd:MEP>
         </pmd:PMode>
         <pmd:PMode id="c3-SRV_SIMPLE_TWOWAY">
-            <pmd:ServiceIdRef>SRV_SIMPLE_TWOWAY </pmd:ServiceIdRef>
+            <pmd:ServiceIdRef>SRV_SIMPLE_TWOWAY</pmd:ServiceIdRef>
             <pmd:LocalPartyInfo partyIdentitySetIdRef="this-instance">
-                <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator </pmd:Role>
-                <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder </pmd:Role>
+                <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator</pmd:Role>
+                <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder</pmd:Role>
             </pmd:LocalPartyInfo>
             <pmd:ExchangeParties>
                 <pmd:PartyInfo partyIdentitySetIdRef="other-instance" partyDefTransportIdRef="default">
-                    <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator </pmd:Role>
-                    <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder </pmd:Role>
+                    <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator</pmd:Role>
+                    <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder</pmd:Role>
                 </pmd:PartyInfo>
             </pmd:ExchangeParties>
             <pmd:MEP>
-                <pmd:MEPType>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/twoWay </pmd:MEPType>
-                <pmd:MEPChannelBinding>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/push </pmd:MEPChannelBinding>
-                <pmd:MEPInitiatorRole>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator </pmd:MEPInitiatorRole>
+                <pmd:MEPType>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/twoWay</pmd:MEPType>
+                <pmd:MEPChannelBinding>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/push</pmd:MEPChannelBinding>
+                <pmd:MEPInitiatorRole>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator</pmd:MEPInitiatorRole>
                 <pmd:Leg>
-                    <pmd:MPC>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/defaultMPC </pmd:MPC>
+                    <pmd:MPC>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/defaultMPC</pmd:MPC>
                     <pmd:Transport>
-                        <pmd:ForeChannel action="ACT_SIMPLE_TWOWAY" securityIdRef="enc_att_and_sign_v1">
-                            <pmd:ReceptionAwareness raPatternIdRef="AS4ReceiptResponse"/>
+                        <pmd:ForeChannel action="ACT_SIMPLE_TWOWAY" securityIdRef="cef-enc_and_sign">
+                            <pmd:ReceptionAwareness raPatternIdRef="cef-reception_awareness"/>
                         </pmd:ForeChannel>
-                        <pmd:BackChannel securityIdRef="sign_sha256"/>
+                        <pmd:BackChannel securityIdRef="cef-sign">
+                            <pmd:ReceptionAwareness/>
+                        </pmd:BackChannel>
+                    </pmd:Transport>
+                </pmd:Leg>
+                <pmd:Leg>
+                    <pmd:MPC>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/defaultMPC</pmd:MPC>
+                    <pmd:Transport>
+                        <pmd:ForeChannel action="ACT_SIMPLE_TWOWAY" securityIdRef="cef-enc_and_sign">
+                            <pmd:ReceptionAwareness raPatternIdRef="cef-reception_awareness"/>
+                        </pmd:ForeChannel>
+                        <pmd:BackChannel securityIdRef="sign_sha256">
+                            <pmd:ReceptionAwareness/>
+                        </pmd:BackChannel>
                     </pmd:Transport>
                 </pmd:Leg>
             </pmd:MEP>
         </pmd:PMode>
         <pmd:PMode id="c3-ONEWAY_RETRY">
-            <pmd:ServiceIdRef>SRV_ONEWAY_RETRY </pmd:ServiceIdRef>
+            <pmd:ServiceIdRef>SRV_ONEWAY_RETRY</pmd:ServiceIdRef>
             <pmd:LocalPartyInfo partyIdentitySetIdRef="this-instance">
-                <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator </pmd:Role>
-                <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder </pmd:Role>
+                <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator</pmd:Role>
+                <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder</pmd:Role>
             </pmd:LocalPartyInfo>
             <pmd:ExchangeParties>
                 <pmd:PartyInfo partyIdentitySetIdRef="other-instance" partyDefTransportIdRef="default">
-                    <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator </pmd:Role>
-                    <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder </pmd:Role>
+                    <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator</pmd:Role>
+                    <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder</pmd:Role>
                 </pmd:PartyInfo>
             </pmd:ExchangeParties>
             <pmd:MEP>
-                <pmd:MEPType>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/twoWay </pmd:MEPType>
-                <pmd:MEPChannelBinding>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/push </pmd:MEPChannelBinding>
-                <pmd:MEPInitiatorRole>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator </pmd:MEPInitiatorRole>
+                <pmd:MEPType>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/twoWay</pmd:MEPType>
+                <pmd:MEPChannelBinding>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/push</pmd:MEPChannelBinding>
+                <pmd:MEPInitiatorRole>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator</pmd:MEPInitiatorRole>
                 <pmd:Leg>
-                    <pmd:MPC>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/defaultMPC </pmd:MPC>
+                    <pmd:MPC>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/defaultMPC</pmd:MPC>
                     <pmd:Transport>
-                        <pmd:ForeChannel action="ACT_ONEWAY_RETRY" securityIdRef="enc_att_and_sign_v1">
-                            <pmd:ReceptionAwareness raPatternIdRef="AS4ReceiptResponse"/>
+                        <pmd:ForeChannel action="ACT_ONEWAY_RETRY" securityIdRef="cef-enc_and_sign">
+                            <pmd:ReceptionAwareness raPatternIdRef="cef-reception_awareness"/>
                         </pmd:ForeChannel>
-                        <pmd:BackChannel securityIdRef="sign_sha256"/>
+                        <pmd:BackChannel securityIdRef="cef-sign"/>
                     </pmd:Transport>
                 </pmd:Leg>
             </pmd:MEP>
         </pmd:PMode>
         <pmd:PMode id="c3-TEST">
-            <pmd:ServiceIdRef>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/service </pmd:ServiceIdRef>
+            <pmd:ServiceIdRef>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/service</pmd:ServiceIdRef>
             <pmd:LocalPartyInfo partyIdentitySetIdRef="this-instance">
-                <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator </pmd:Role>
-                <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder </pmd:Role>
+                <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator</pmd:Role>
+                <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder</pmd:Role>
             </pmd:LocalPartyInfo>
             <pmd:ExchangeParties>
                 <pmd:PartyInfo partyIdentitySetIdRef="other-instance" partyDefTransportIdRef="default">
-                    <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator </pmd:Role>
-                    <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder </pmd:Role>
+                    <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator</pmd:Role>
+                    <pmd:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder</pmd:Role>
                 </pmd:PartyInfo>
             </pmd:ExchangeParties>
             <pmd:MEP>
-                <pmd:MEPType>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/twoWay </pmd:MEPType>
-                <pmd:MEPChannelBinding>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/push </pmd:MEPChannelBinding>
-                <pmd:MEPInitiatorRole>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator </pmd:MEPInitiatorRole>
+                <pmd:MEPType>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/twoWay</pmd:MEPType>
+                <pmd:MEPChannelBinding>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/push</pmd:MEPChannelBinding>
+                <pmd:MEPInitiatorRole>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator</pmd:MEPInitiatorRole>
                 <pmd:Leg>
-                    <pmd:MPC>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/defaultMPC </pmd:MPC>
+                    <pmd:MPC>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/defaultMPC</pmd:MPC>
                     <pmd:Transport>
-                        <pmd:ForeChannel action="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/test" securityIdRef="enc_att_and_sign_v1">
-                            <pmd:ReceptionAwareness raPatternIdRef="AS4ReceiptResponse"/>
+                        <pmd:ForeChannel action="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/test" securityIdRef="cef-enc_and_sign">
+                            <pmd:ReceptionAwareness raPatternIdRef="cef-reception_awareness"/>
                         </pmd:ForeChannel>
-                        <pmd:BackChannel securityIdRef="sign_sha256"/>
+                        <pmd:BackChannel securityIdRef="cef-sign"/>
                     </pmd:Transport>
                 </pmd:Leg>
             </pmd:MEP>
         </pmd:PMode>
-        
-        
     </ns1:PModeData>
     <ns1:PluginData>
-        <ns3:SEDInterceptor  name="CEF_Interceptor" active="true" interceptEvent="InMessage" interceptRole="All">
+        <ns3:SEDInterceptor  name="CEF_Notification" active="true" interceptEvent="InMessage" interceptRole="All">
             <ns3:SEDInterceptorRule property="Service" predicate="InList" value="http://www.esens.eu/as4/conformancetest;SRV_ONEWAY_SIGNONLY;SRV_ONEWAY_RETRY;SRV_SIMPLE_ONEWAY;SRV_SIMPLE_TWOWAY"/>
             <ns3:SEDInterceptorInstance plugin="CEFPluginDescription" type="CEFInInterceptor" pluginVersion="1.0.0"/>
+        </ns3:SEDInterceptor>
+        <ns3:SEDInterceptor  name="CEF_Fault_Notification" active="true" interceptEvent="OutFaultMessage" interceptRole="All">
+            <ns3:SEDInterceptorInstance plugin="CEFPluginDescription" type="CEFOutFaultInterceptor" pluginVersion="1.0.0"/>
         </ns3:SEDInterceptor>
         
         <ns2:SEDCronJob name="CEF_Notification" active="true" second="*/5" minute="*" hour="*" dayOfMonth="*" month="*" dayOfWeek="*">
